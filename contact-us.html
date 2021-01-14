@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- jQuery and JS bundle w/ Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="js/captcha.js"></script>
+<script src="js/contact-us.js"></script>
+<link rel="stylesheet" href="css/about.css">
+<script src="js/map.js"></script>
+<script src="C:\Users\Hp user\Desktop\Bluetick Assignment\node_modules\jquery\dist\jquery.min.js"></script>
+<script src="C:\Users\Hp user\Desktop\Bluetick Assignment\node_modules\jquery-validation\dist\jquery.validate.min.js"></script>
+<style>
+  .centerdv{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+</style>
+</head>
+<body style="background-image: url(https://us.123rf.com/450wm/dezignmart/dezignmart1801/dezignmart180100022/94263589-islamic-ornament-golden-black-background-vector-illustration.jpg?ver=6);" onload="GenerateCaptcha()">
+    <div class="container centerdv">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">
+              <img src="photos/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo" loading="lazy">
+            </a>
+            <form class="form-inline my-2 my-lg-0 centerform">
+              <input class="form-control mr-sm-2" width="200px" type="search" placeholder="Search" aria-label="Search" style="border-radius: 50px;">
+            </form>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Home
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">SubMenu1</a>
+                      <a class="dropdown-item" href="#">SubMenu2</a>
+                      <a class="dropdown-item" href="#">SubMenu3</a>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact-us.html">Contact Us</a>
+                </li>
+              </ul>
+              </div>
+          </nav>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+            </ol>
+          </nav>
+          <br>
+          <div class="container centerdv" style="background-color: white;">
+            <form action="" name="login">
+              <br>
+              <br>
+              <div class="row">
+              <div class="form-group col-md-6 centerdv">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" class="form-control" id="firstname" aria-describedby="FirstNameHelp" placeholder="Enter your First Name">
+              </div>
+              <div class="form-group col-md-6 centerdv">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" class="form-control" id="lastname" aria-describedby="LastNameHelp" placeholder="Enter your Last Name">
+              </div>
+              </div>
+              <div class="row">
+              <div class="form-group col-md-6 centerdv">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your Email">
+              </div>
+              <div class="form-group col-md-6 centerdv">
+                <label for="phonenumber">Phone Number</label>
+                <input type="number" name="phonenumber" class="form-control" id="phonenumber" aria-describedby="phonenumberHelp" placeholder="Enter your Phone Number">
+              </div>
+              </div>
+              <div class="row">
+              <div class="form-group col-md-6 centerdv">
+                <label for="message">Message</label>
+                <textarea type="text" name="message" class="form-control" id="message" aria-describedby="messageHelp" placeholder="Enter your Message" height="200px">
+                  </textarea>
+                  </div>
+              <div class="form-group col-md-6 centerdv">    
+                <label for="captcha">Captcha: </label>
+                <input type="text" id="txtCompare" class="centerdv">
+                <input type="text" id="txtCaptcha" style="text-align: center; border: none; font-weight: bold; font-size: 20px; font-family: Modern" />  
+                <button id="btnrefresh" class="btn btn-outline-primary" style="border-radius: 50px; border-width: 0px;" onclick="GenerateCaptcha();"><img src="photos/refresh.png" width="20" height="20"></button> 
+                <br />  
+                <br />  
+            </div>
+            </div>
+              <button type="submit" onsubmit="validate()" onclick="alert(ValidCaptcha());" class="btn btn-outline-success centerdv" style="border-radius: 33px;">Send</button>
+              </form>
+              <br>
+          <br>
+          </div>
+          <br>
+          <br>
+
+          <div class="container centerdv" id="map" class="map" style="width:100%;height:400px;background:white">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1D7yJeMNIM-TV0McCHYB0lsM-pq0LOY0&callback=initMap"></script>
+          </div>
+
+          
+    </body>
+<br>
+<br>
+<footer style="background-color: black;">
+  <div class="centerdv row">
+    <ul class="col-sm-4 centerdv">
+      <br>
+      <br>
+      <ol><a href="index.html">Home</a></ol>
+      <br>
+      <ol><a href="about.html">About</a></ol>
+      <br>
+      <ol><a href="contact-us.html">Contact Us</a></ol>
+    </ul>
+    <ul class="col-sm-4 centerdv">
+      <br>
+      <br>
+      <p style="color: white;">We are also available on various social media platforms:</p>
+      <a href="https://www.facebook.com"><button class="btn btn-outline" margin-radius="50px"><img src="photos/facebook.png" width="30px" height="30px" style="border-radius:50px"></button></a>
+      <a href="https://www.instagram.com"><button class="btn btn-outline" margin-radius="50px"><img src="photos/instagram.png" width="30px" height="30px" style="border-radius: 50px;"></button></a>
+      <a href="https://www.youtube.com"><button class="btn btn-outline" margin-radius="50px"><img src="photos/youtube.png" width="30px" height="30px" style="border-radius: 50px;"></button></a>
+    </ul>
+    <ul class="col-sm-4 centerdv">
+      <br>
+      <br>
+    <h5 style="color: white;">Our Address:</h5>
+    <p style="color: white;">ABC Locality, XYZ Street, GHI. PQR-123456.</p>
+    <p style="color: white;">Phone: +91-1234567890</p>
+    </ul>
+  </div>
+  <div class="centerdv">
+    &copy;
+    Copyright of <span><a href="about.html">Travel.com</a></span>
+  </div>
+</footer>
+</html>

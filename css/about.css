@@ -1,0 +1,23 @@
+.navbar ul li.active a,.navbar ul li a:hover{
+    text-decoration: none;
+}
+.centerdv{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+h5,p{
+    color: darkblue;
+}
+.centerform{
+    position: absolute; 
+    left: 50%; 
+    transform: translatex(-50%);
+}
+.navbar-collapse{
+    text-align: left;
+}
+.nav-item:hover,.nav-item::selection{
+    background-color: grey;
+    color: white;
+}
